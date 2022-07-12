@@ -16,6 +16,8 @@ public class afaf {
 
 		//변경된 값
 		// hello hihihi heloo
+		// test im  0712  ok
+		// test im 111 ojok
 		//아직 미완임 ox퀴즈 다음
 //		int a=Integer.parseInt(s.nextLine());
 //		String [] ar=new String [a];

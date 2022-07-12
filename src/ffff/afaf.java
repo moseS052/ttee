@@ -13,6 +13,8 @@ public class afaf {
 		Scanner s=new Scanner(System.in);
 		System.out.println("숫자 입력");
 		
+
+		//변경된 값
 		//아직 미완임 ox퀴즈 다음
 //		int a=Integer.parseInt(s.nextLine());
 //		String [] ar=new String [a];
@@ -41,6 +43,7 @@ public class afaf {
 ////			System.out.println(Math.round(b);
 //			// 아직 미완
 //		}
+		
 	}
 }
 	

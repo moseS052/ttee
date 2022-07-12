@@ -12,6 +12,8 @@ public class afaf {
 	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
 		System.out.println("숫자 입력");
+		
+		//변경된 값
 		int a=Integer.parseInt(s.nextLine());
 		String [] ar=new String [a];
 		for(int i=0;i<a;i++) {

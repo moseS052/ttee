@@ -11,6 +11,7 @@ public class afaf {
 
 	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
+<<<<<<< HEAD
 		System.out.println("숫자 입력");		
 		int a=Integer.parseInt(s.nextLine());
 		String [] ar=new String [a];
@@ -40,6 +41,44 @@ public class afaf {
 			float c=bm/1000;
 			System.out.println(c);
 		}
+=======
+		System.out.println("숫자 입력");
+		
+
+		//변경된 값
+		// hello hihihi heloo
+		// test im  0712  ok
+		// test im 111 ojok
+		//아직 미완임 ox퀴즈 다음
+//		int a=Integer.parseInt(s.nextLine());
+//		String [] ar=new String [a];
+//		for(int i=0;i<a;i++) {
+//			ar[i]=s.nextLine();
+//		}
+//		int sum=0;
+//		for(int i=0;i<ar.length;i++) {
+//			String [] arr=ar[i].split(" ");
+//			int[] br=new int[arr.length];
+//			for(int m=0;m<arr.length;m++) {
+//				br[m]=Integer.parseInt(arr[m]);
+//			}
+//			for(int k=1;k<br.length;k++) {
+//				sum+=br[k];
+//			}
+//			float ave=sum/br[0];
+//			double x=0;
+//			for(int j=1;j<br.length;j++) {
+//				if(br[j]>ave) {
+//					x++;
+//				}
+//			}
+//			double b=(x/br[0]*1000)/1000;
+//			System.out.println(b);
+////			System.out.println(Math.round(b);
+//			// 아직 미완
+//		}
+		
+>>>>>>> dfa1060000ea78ce06e5e783446a487f76838020
 	}
 }
 	

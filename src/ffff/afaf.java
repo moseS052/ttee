@@ -11,7 +11,7 @@ public class afaf {
 
 	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
-<<<<<<< HEAD
+
 		System.out.println("숫자 입력");		
 		int a=Integer.parseInt(s.nextLine());
 		String [] ar=new String [a];
@@ -41,7 +41,7 @@ public class afaf {
 			float c=bm/1000;
 			System.out.println(c);
 		}
-=======
+
 		System.out.println("숫자 입력");
 		
 
@@ -78,7 +78,7 @@ public class afaf {
 //			// 아직 미완
 //		}
 		
->>>>>>> dfa1060000ea78ce06e5e783446a487f76838020
+
 	}
 }
 	

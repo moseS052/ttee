@@ -5,28 +5,27 @@ import java.util.Scanner;
 
 
 public class Main {
-	//한수
+
 	public static void main(String[] args) {
+//알파벳 찾기		
 		Scanner s=new Scanner(System.in);
-		int a=Integer.parseInt(s.nextLine());
-		System.out.println(getResult(a));
-	}
-	public static int getResult(int n) {
-		int sum=0;
-		if(n==1000) n=999;
-		if(n<100) {
-			sum=n;
-			return sum;
-		}else {
-			sum=99;
-			for(int i=100;i<=n;i++) {
-				int a=i%10;
-				int b=i/10%10;
-				int c=i/100%10;
-				if(a-b==b-c) sum++;
-			}
-			return sum;
+		String a=s.nextLine();
+		int[] ar=new int[a.length()];
+		for(int i=0;i<a.length();i++) {
+			ar[i]=a.charAt(i);
 		}
+		int[] br=new int[26];
+		int k=0;
+		for(int i=97;i<123;i++) {
+			for(int j=0;j<ar.length;j++) {
+				if(i==ar[j]) {
+					br[k]=j;
+					break;
+				} else br[k]=-1;
+			}
+			k++;
+		}
+		for(int i=0;i<br.length;i++) System.out.print(br[i]+" ");
 	}
 }
 
@@ -34,6 +33,47 @@ public class Main {
 
 
 
+
+
+//숫자의 합
+//		Scanner s=new Scanner(System.in);
+//		int a=Integer.parseInt(s.nextLine());
+//		int[] ar=new int[a];
+//		String[] ar1=s.nextLine().split("");
+//		int sum=0;
+//		for(int i=0;i<a;i++) {
+//			ar[i]= Integer.parseInt(ar1[i]);
+//			sum+=ar[i];
+//		}
+//		System.out.println(sum);
+
+//아스키 코드
+//		Scanner s=new Scanner(System.in);
+//		int a=s.nextLine().charAt(0);
+//		System.out.println(a);
+		
+
+//한수
+//		Scanner s=new Scanner(System.in);
+//		int a=Integer.parseInt(s.nextLine());
+//		System.out.println(getResult(a));
+//	}
+//	public static int getResult(int n) {
+//		int sum=0;
+//		if(n==1000) n=999;
+//		if(n<100) {
+//			sum=n;
+//			return sum;
+//		}else {
+//			sum=99;
+//			for(int i=100;i<=n;i++) {
+//				int a=i%10;
+//				int b=i/10%10;
+//				int c=i/100%10;
+//				if(a-b==b-c) sum++;
+//			}
+//			return sum;
+//		}
 
 
 //셀프넘버

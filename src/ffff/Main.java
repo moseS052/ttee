@@ -7,25 +7,22 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-//알파벳 찾기		
+		//문자열 반복
 		Scanner s=new Scanner(System.in);
-		String a=s.nextLine();
-		int[] ar=new int[a.length()];
-		for(int i=0;i<a.length();i++) {
-			ar[i]=a.charAt(i);
-		}
-		int[] br=new int[26];
-		int k=0;
-		for(int i=97;i<123;i++) {
-			for(int j=0;j<ar.length;j++) {
-				if(i==ar[j]) {
-					br[k]=j;
-					break;
-				} else br[k]=-1;
+		int a=Integer.parseInt(s.nextLine());
+		String[] ar=new String[a];
+		for(int i=0;i<a;i++) {
+			ar[i]="";
+			String[] arr=s.nextLine().split(" ");
+			int j=Integer.parseInt(arr[0]);
+			String[] ar2=arr[1].split("");
+			for(int l=0;l<ar2.length;l++) {
+				for(int k=0;k<j;k++) {
+					ar[i]+=ar2[l];
+				}
 			}
-			k++;
 		}
-		for(int i=0;i<br.length;i++) System.out.print(br[i]+" ");
+		for(int i=0;i<ar.length;i++) System.out.println(ar[i]);
 	}
 }
 
@@ -34,6 +31,25 @@ public class Main {
 
 
 
+//알파벳 찾기		
+//		Scanner s=new Scanner(System.in);
+//		String a=s.nextLine();
+//		int[] ar=new int[a.length()];
+//		for(int i=0;i<a.length();i++) {
+//			ar[i]=a.charAt(i);
+//		}
+//		int[] br=new int[26];
+//		int k=0;
+//		for(int i=97;i<123;i++) {
+//			for(int j=0;j<ar.length;j++) {
+//				if(i==ar[j]) {
+//					br[k]=j;
+//					break;
+//				} else br[k]=-1;
+//			}
+//			k++;
+//		}
+//		for(int i=0;i<br.length;i++) System.out.print(br[i]+" ");
 
 //숫자의 합
 //		Scanner s=new Scanner(System.in);

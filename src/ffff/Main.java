@@ -1,28 +1,48 @@
 package ffff;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		//문자열 반복
+		//단어 공부
 		Scanner s=new Scanner(System.in);
-		int a=Integer.parseInt(s.nextLine());
-		String[] ar=new String[a];
-		for(int i=0;i<a;i++) {
-			ar[i]="";
-			String[] arr=s.nextLine().split(" ");
-			int j=Integer.parseInt(arr[0]);
-			String[] ar2=arr[1].split("");
-			for(int l=0;l<ar2.length;l++) {
-				for(int k=0;k<j;k++) {
-					ar[i]+=ar2[l];
+		String[] str=s.nextLine().toUpperCase().split("");
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for(int i=0;i<str.length;i++) {
+			int n=0;
+			int h=1;
+			for(int j=0;j<al.size();j++) {
+				if(al.get(j)==i) {
+					n=1;
+					break;
+				}
+			}
+			if(n==1) continue;
+			for(int k=0;k<str.length;k++) {
+				if(str[i].equals(str[k])) {
+					map.put(str[i],h++);
+					al.add(k);
 				}
 			}
 		}
-		for(int i=0;i<ar.length;i++) System.out.println(ar[i]);
+		int maxs=Collections.max(map.values());
+		ArrayList<String> ku=new ArrayList<String>();
+		for (String key : map.keySet()) {
+			if (map.get(key)==maxs) {
+				ku.add(key);
+			}
+			
+		}
+		if(ku.size()>1) {
+			System.out.println("?");
+		}else System.out.println(ku.get(0));
 	}
 }
 
@@ -30,6 +50,22 @@ public class Main {
 
 
 
+//문자열 반복
+//		Scanner s=new Scanner(System.in);
+//		int a=Integer.parseInt(s.nextLine());
+//		String[] ar=new String[a];
+//		for(int i=0;i<a;i++) {
+//			ar[i]="";
+//			String[] arr=s.nextLine().split(" ");
+//			int j=Integer.parseInt(arr[0]);
+//			String[] ar2=arr[1].split("");
+//			for(int l=0;l<ar2.length;l++) {
+//				for(int k=0;k<j;k++) {
+//					ar[i]+=ar2[l];
+//				}
+//			}
+//		}
+//		for(int i=0;i<ar.length;i++) System.out.println(ar[i]);
 
 //알파벳 찾기		
 //		Scanner s=new Scanner(System.in);

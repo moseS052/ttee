@@ -1,53 +1,102 @@
 package ffff;
 
+//import java.util.Collections;
+//import java.util.HashMap;
+//import java.util.Map;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		//단어 공부
+		//다이얼
 		Scanner s=new Scanner(System.in);
 		String[] str=s.nextLine().toUpperCase().split("");
-		ArrayList<Integer> al=new ArrayList<Integer>();
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		int[] ar=new int[str.length];
+		int sum=0;
 		for(int i=0;i<str.length;i++) {
-			int n=0;
-			int h=1;
-			for(int j=0;j<al.size();j++) {
-				if(al.get(j)==i) {
-					n=1;
-					break;
-				}
-			}
-			if(n==1) continue;
-			for(int k=0;k<str.length;k++) {
-				if(str[i].equals(str[k])) {
-					map.put(str[i],h++);
-					al.add(k);
-				}
+			char ch=str[i].charAt(0);
+			ar[i]=ch;
+		}
+		for(int i=0;i<ar.length;i++) {
+			if(ar[i]<=79 || (ar[i]>=84 && ar[i]<=85) ) {
+				sum+=(ar[i]+1)/3-19;
+			}else if(ar[i]==86) {
+				sum+=9;
+			}else if(ar[i]>=87) {
+				sum+=10;
+			}else {
+				sum+=8;
 			}
 		}
-		int maxs=Collections.max(map.values());
-		ArrayList<String> ku=new ArrayList<String>();
-		for (String key : map.keySet()) {
-			if (map.get(key)==maxs) {
-				ku.add(key);
-			}
-			
-		}
-		if(ku.size()>1) {
-			System.out.println("?");
-		}else System.out.println(ku.get(0));
+		System.out.println(sum);
 	}
 }
 
 
 
+
+
+
+//상수
+//		Scanner s=new Scanner(System.in);
+//		String[] str=s.nextLine().split(" ");
+//		int[] ar=new int[3];
+//		int x=0,y=0;
+//		for(int i=0;i<str.length;i++) {
+//			String[] strr=str[i].split("");
+//			for(int j=0;j<strr.length;j++) {
+//				ar[strr.length-1-j]=Integer.parseInt(strr[j]);
+//			}
+//			if(i==0) x=ar[0]*100+ar[1]*10+ar[2];
+//			if(i==1) y=ar[0]*100+ar[1]*10+ar[2];
+//		}
+//		if(x>y) {
+//			System.out.println(x);
+//		}else System.out.println(y);
+
+//단어의 개수
+//Scanner s=new Scanner(System.in);
+//String str1=s.nextLine().strip();
+//String[] str=str1.split(" ");
+//if(str[0].equals("")) {
+//	System.out.println(0);
+//}else System.out.println(str.length);
+
+////단어 공부
+//Scanner s=new Scanner(System.in);
+//String[] str=s.nextLine().toUpperCase().split("");
+//ArrayList<Integer> al=new ArrayList<Integer>();
+//Map<String, Integer> map = new HashMap<String, Integer>();
+//for(int i=0;i<str.length;i++) {
+//	int n=0;
+//	int h=1;
+//	for(int j=0;j<al.size();j++) {
+//		if(al.get(j)==i) {
+//			n=1;
+//			break;
+//		}
+//	}
+//	if(n==1) continue;
+//	for(int k=0;k<str.length;k++) {
+//		if(str[i].equals(str[k])) {
+//			map.put(str[i],h++);
+//			al.add(k);
+//		}
+//	}
+//}
+//int maxs=Collections.max(map.values());
+//ArrayList<String> ku=new ArrayList<String>();
+//for (String key : map.keySet()) {
+//	if (map.get(key)==maxs) {
+//		ku.add(key);
+//	}
+//	
+//}
+//if(ku.size()>1) {
+//	System.out.println("?");
+//}else System.out.println(ku.get(0));
 
 
 //문자열 반복

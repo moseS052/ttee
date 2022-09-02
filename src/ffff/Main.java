@@ -10,27 +10,22 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		//다이얼
+		//손익분기점
 		Scanner s=new Scanner(System.in);
-		String[] str=s.nextLine().toUpperCase().split("");
+		String[] str=s.nextLine().split(" ");
 		int[] ar=new int[str.length];
-		int sum=0;
 		for(int i=0;i<str.length;i++) {
-			char ch=str[i].charAt(0);
-			ar[i]=ch;
+			ar[i]=Integer.parseInt(str[i]);
 		}
-		for(int i=0;i<ar.length;i++) {
-			if(ar[i]<=79 || (ar[i]>=84 && ar[i]<=85) ) {
-				sum+=(ar[i]+1)/3-19;
-			}else if(ar[i]==86) {
-				sum+=9;
-			}else if(ar[i]>=87) {
-				sum+=10;
-			}else {
-				sum+=8;
+		if(ar[2]<ar[1]) {
+			System.out.println(-1);
+		}else {
+			long i=1;
+			for(i=1;;i++) {
+				if(ar[2]*i>ar[0]+ar[1]*i) break;
 			}
+			System.out.println(i);
 		}
-		System.out.println(sum);
 	}
 }
 
@@ -38,6 +33,102 @@ public class Main {
 
 
 
+
+//		//그룹 단어 체커
+//		Scanner s=new Scanner(System.in);
+//		int a=Integer.parseInt(s.nextLine());
+//		String[] ar=new String[a];
+//		for(int i=0;i<a;i++) {
+//			ar[i]=s.nextLine();
+//		}
+//		for(int k=0;k<ar.length;k++) {
+//			int n=0;
+//			String str=ar[k];
+//			for(int i=0;i<str.length();i++) {
+//				for(int j=i+1;j<str.length();j++) {
+//					if(str.charAt(i)==str.charAt(j)) {
+//						if(i+1==j) {
+//							break;
+//						}else {
+//							n=1;
+//							break;
+//						}
+//					}
+//				}
+//				if(n==1) {
+//					a-=1;
+//					break;
+//				}
+//			}
+//		}
+//		System.out.println(a);
+
+//	//크로아티아 알파벳
+//	Scanner s=new Scanner(System.in);
+//	String a=s.nextLine();
+//	int n=a.length();
+//	System.out.println(getNum(a,n));
+//	
+//}
+//
+//public static int getNum(String a,int n) {
+//	if(a.contains("c=")) {
+//		a=a.replaceFirst("c=", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}else if(a.contains("c-")) {
+//		a=a.replaceFirst("c-", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}else if(a.contains("d-")) {
+//		a=a.replaceFirst("d-", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}else if(a.contains("lj")) {
+//		a=a.replaceFirst("lj", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}else if(a.contains("nj")) {
+//		a=a.replaceFirst("nj", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}else if(a.contains("s=")) {
+//		a=a.replaceFirst("s=", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}else if(a.contains("dz=")) {
+//		a=a.replaceFirst("dz=", "***");
+//		n-=2;
+//		n=getNum(a,n);
+//	}else if(a.contains("z=")) {
+//		a=a.replaceFirst("z=", "**");
+//		n-=1;
+//		n=getNum(a,n);
+//	}
+//	return n;
+//}
+
+////다이얼
+//Scanner s=new Scanner(System.in);
+//String[] str=s.nextLine().toUpperCase().split("");
+//int[] ar=new int[str.length];
+//int sum=0;
+//for(int i=0;i<str.length;i++) {
+//	char ch=str[i].charAt(0);
+//	ar[i]=ch;
+//}
+//for(int i=0;i<ar.length;i++) {
+//	if(ar[i]<=79 || (ar[i]>=84 && ar[i]<=85) ) {
+//		sum+=(ar[i]+1)/3-19;
+//	}else if(ar[i]==86) {
+//		sum+=9;
+//	}else if(ar[i]>=87) {
+//		sum+=10;
+//	}else {
+//		sum+=8;
+//	}
+//}
+//System.out.println(sum);
 
 //상수
 //		Scanner s=new Scanner(System.in);
